@@ -22,7 +22,9 @@ export const uploadMovie = async (req, res) => {
 
       const videoFolder = path.join('..', 'videos', movieTitle);
 
-      fs.mkdirSync(videoFolder, { recursive: true });
+      if (!fs.existsSync(videoFolder)) {
+        fs.mkdirSync(videoFolder, { recursive: true });
+      }
 
       const videoPath = path.join(videoFolder, 'video.mp4');
       fs.writeFileSync(videoPath, req.file.buffer);
