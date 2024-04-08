@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { toast } from 'react-toastify';
 import { useAuthContext } from "../context/AuthContext"
+import { setCookie } from "./useSetCookie";
 import 'react-toastify/dist/ReactToastify.css';
 
 const useHomePageLogin=()=>{
-  const {setAuthUser} = useAuthContext()
+  const {login} = useAuthContext()
   const [loginError, setLoginError] = useState(false);
 
-  const login=async(email)=>{
+  const loginHandler=async(email)=>{
     const success= handleInputErrors({email})
     if(!success) return
 
@@ -23,14 +24,14 @@ const useHomePageLogin=()=>{
         throw new Error(data.error)
       }
 
-      localStorage.setItem('netflix-user',JSON.stringify(data))
-      setAuthUser(data)
+      login(data);
+      setCookie('token',data.token,30)
     }catch(error){
       setLoginError(true)
       toast.error(error.message)
     }
   }
-  return {login,loginError}
+  return {loginHandler,loginError}
 }
 
 export {useHomePageLogin}
@@ -42,3 +43,4 @@ function handleInputErrors({email}){
   }
   return true
 }
+

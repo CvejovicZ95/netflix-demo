@@ -12,7 +12,7 @@ const Login=()=>{
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
 
-  const {login}=useLogin()
+  const {loginHandler}=useLogin()
 
   const handleCheck=()=>{
     setCheck(prevState=>!prevState)
@@ -20,7 +20,7 @@ const Login=()=>{
 
   const handleSubmit=async(e)=>{
     e.preventDefault()
-    await login(email,password)
+    await loginHandler(email,password)
   }
 
 return(

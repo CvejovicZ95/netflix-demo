@@ -1,10 +1,10 @@
 import { toast } from 'react-toastify';
 import { useAuthContext } from "../context/AuthContext"
-
+import { setCookie } from './useSetCookie';
 const useLogin=()=>{
-  const {setAuthUser} = useAuthContext()
+  const {login} = useAuthContext()
   
-  const login=async(email,password)=>{
+  const loginHandler=async(email,password)=>{
     const success= handleInputErrors({email,password})
     if(!success) return
 
@@ -15,23 +15,18 @@ const useLogin=()=>{
         body:JSON.stringify({email,password})
       })
 
-      const data=await res.json()
-      if(data.error){
-        if (data.error === "Invalid email or password") {
-          throw new Error("Wrong email or password");
-        }else{
-          throw new Error(data.error)
-        }
+      const data = await res.json();
+      if (data.error) {
+        throw new Error("Invalid email or password");
       }
 
-      localStorage.setItem('netflix-user',JSON.stringify(data))
-      setAuthUser(data)
+      login(data)
       setCookie('token',data.token,30)
     }catch(error){
       toast.error(error.message)
     }
   }
-  return {login}
+  return {loginHandler}
 }
 
 export {useLogin}
@@ -42,14 +37,4 @@ function handleInputErrors({email,password}){
     return false
   }
   return true
-}
-
-function setCookie(name, value, minutes) {
-  var expires = "";
-  if (minutes) {
-      let date = new Date();
-      date.setTime(date.getTime() + (minutes * 60 * 1000)); 
-      expires = "; expires=" + date.toUTCString();
-  }
-  document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }

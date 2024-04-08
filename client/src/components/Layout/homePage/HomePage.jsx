@@ -7,11 +7,11 @@ const HomePage=()=>{
 
   const [email,setEmail]=useState('')
   const [loginCheck,setLoginCheck]=useState(false)
-  const {login,loginError}=useHomePageLogin()
+  const {loginHandler,loginError}=useHomePageLogin()
 
   const handleSubmit=async(e)=>{
     e.preventDefault()
-    await login(email)
+    await loginHandler(email)
     setLoginCheck(true)
   }
 
