@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
-import Logo from "./Logo"
+import {Logo} from "../../logo/Logo"
+import './Header.css'; 
 
 const Header=()=>{
   return(
@@ -10,4 +11,4 @@ const Header=()=>{
   )
 }
 
-export default Header
+export {Header}

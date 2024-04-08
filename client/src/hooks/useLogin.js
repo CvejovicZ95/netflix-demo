@@ -34,7 +34,7 @@ const useLogin=()=>{
   return {login}
 }
 
-export default useLogin
+export {useLogin}
 
 
 function handleInputErrors({email,password}){

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
-import Logo from "./Logo"
+import {Logo} from "../logo/Logo"
 import { useState } from "react"
-import useRegister from "../hooks/useRegister"
+import {useRegister} from "../../hooks/useRegister"
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { BiCameraMovie } from "react-icons/bi";
-
+import "./Register.css";
 
 const Register = () => {
   const [inputs, setInputs] = useState({
@@ -75,4 +75,4 @@ const Register = () => {
   )
 }
 
-export default Register
+export {Register}

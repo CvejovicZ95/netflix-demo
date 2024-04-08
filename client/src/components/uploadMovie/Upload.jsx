@@ -1,11 +1,12 @@
-import Logo from "./Logo"
-import Logout from "./LogoutButton"
+import {Logo} from "../logo/Logo"
+import {Logout} from "../logoutButton/LogoutButton"
 import { useState } from "react"
-import useUpload from "../hooks/useUpload"
+import {useUpload} from "../../hooks/useUpload"
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
 import { Navigate } from "react-router-dom"
 import { MdUpload } from "react-icons/md";
+import "./Upload.css";
 
 const Upload=()=>{
 
@@ -116,4 +117,4 @@ const Upload=()=>{
   )
 }
 
-export default Upload
+export {Upload}

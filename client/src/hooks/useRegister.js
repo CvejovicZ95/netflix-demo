@@ -38,7 +38,7 @@ const useRegister=()=>{
   return {registration,register}
 }
 
-export default useRegister
+export {useRegister}
 
 function handleInputErrors({email,password,confirmPassword,phoneNumber}){
   if(!email || !password || !confirmPassword || !phoneNumber){

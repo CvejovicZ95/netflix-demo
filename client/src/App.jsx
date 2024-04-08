@@ -1,9 +1,9 @@
-import Layout from "./components/Layout";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Help from "./components/Help";
-import Movies from "./components/Movies";
-import Upload from './components/Upload'
+import {Layout} from "./components/Layout/Layout"
+import {Login} from "./components/login/Login"
+import {Register} from "./components/register/Register"
+import {Help} from "./components/help/Help"
+import {Movies} from "./components/movies/Movies"
+import {Upload} from "./components/uploadMovie/Upload"
 import {Route,Routes,Navigate} from 'react-router-dom'
 import { useAuthContext } from './context/AuthContext'
 
@@ -27,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+export {App};

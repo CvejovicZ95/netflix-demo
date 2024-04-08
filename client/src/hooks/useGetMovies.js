@@ -27,4 +27,4 @@ const useGetMovies=()=>{
   return {loading,movies}
 }
 
-export default useGetMovies
+export {useGetMovies}

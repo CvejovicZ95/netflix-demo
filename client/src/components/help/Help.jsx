@@ -1,4 +1,5 @@
-import Logo from "./Logo"
+import {Logo} from "../logo/Logo"
+import "./Help.css";
 
 const Help=()=>{
   return(
@@ -13,4 +14,4 @@ const Help=()=>{
   )
 }
 
-export default Help
+export {Help}

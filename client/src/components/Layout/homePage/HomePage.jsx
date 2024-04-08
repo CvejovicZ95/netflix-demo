@@ -1,6 +1,7 @@
 import { useState } from "react"
-import useHomePageLogin from "../hooks/useHomePageLogin"
+import {useHomePageLogin} from "../../../hooks/useHomePageLogin.js"
 import { Navigate } from "react-router-dom"
+import "./HomePage.css";
 
 const HomePage=()=>{
 
@@ -36,4 +37,4 @@ const HomePage=()=>{
   )
 }
 
-export default HomePage
+export {HomePage}

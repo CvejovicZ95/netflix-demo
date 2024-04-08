@@ -1,0 +1,114 @@
+
+.loginForm{
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 60px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.loginForm h1{
+  color: #fff;
+  text-align: start;
+  font-size: 36px;
+}
+.loginForm input{
+  width: 95%;
+  padding: 15px;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+}
+.loginForm button{
+  width: 105%;
+  padding: 16px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: #c70812;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+.loginForm h1 ,.form input, .formb button {
+  transition: 0.3s;
+}
+
+.loginForm input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.loginForm button:hover {
+  background-color: #ff000d;
+}
+.login-error{
+  color: red;
+}
+.loginForm{
+  color: #737373;
+}
+.remember{
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+}
+.remember label{
+  font-size: 14px;
+  margin: 4px;
+}
+.checkboxDiv{
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  color:#737373;
+}
+
+.checkboxDiv a{
+  text-decoration: none;
+  color: white;
+}
+.checkboxDiv a:hover{
+ text-decoration: underline;
+}
+.signLink{
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}
+.captcha{
+  font-size: 13px;
+}
+input[type=checkbox] {
+  position: relative;
+  cursor: pointer;
+}
+input[type=checkbox]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  top: 0;
+  left: 0;
+  border: 2px solid #555555;
+  border-radius: 3px;
+  background-color: white;
+}
+input[type=checkbox]:checked:after {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 9px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 1px;
+  left: 5.5px;
+}

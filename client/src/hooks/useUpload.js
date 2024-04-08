@@ -42,7 +42,7 @@ const useUpload = () => {
   return { loading,uploaded, upload }
 }
 
-export default useUpload;
+export {useUpload}
 
 function handleInputErrors({ title, description, length, type, imageUrl, category }) {
   if (!title || !description || !length || !type || !imageUrl || !category) {

@@ -54,4 +54,4 @@ function handleInputErrors({ movieId }) {
   return true;
 }
 
-export default useStartStreaming;
+export {useStartStreaming}

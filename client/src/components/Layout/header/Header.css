@@ -1,0 +1,27 @@
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.logoImg{
+  width: 320px;
+}
+.signButton{
+  background-color: red;
+  padding: 8px;
+  transition: inherit;
+  border-style: solid;
+  border-width: 0.0625rem;
+  border-radius: 0.1875rem;
+  border-color: red;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+}
+.signButton:hover{
+  background-color: rgb(221, 0, 0);
+}

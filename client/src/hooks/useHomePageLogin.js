@@ -33,7 +33,7 @@ const useHomePageLogin=()=>{
   return {login,loginError}
 }
 
-export default useHomePageLogin
+export {useHomePageLogin}
 
 
 function handleInputErrors({email}){

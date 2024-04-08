@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
-import MoviesHeader from "./MoviesHeader";
-import useGetMovies from "../hooks/useGetMovies";
-import useStartStreaming from "../hooks/useStartStreaming";
+import {MoviesHeader} from "./MoviesHeader"
+import {useGetMovies} from "../../hooks/useGetMovies";
+import {useStartStreaming} from "../../hooks/useStartStreaming";
 import videojs from 'video.js';
+import "./Movies.css";
 
 const Movies = () => {
   const { movies } = useGetMovies();
@@ -55,6 +56,7 @@ const Movies = () => {
         player.dispose();
       }
     };
+    // eslint-disable-next-line
   }, [isPlaying]);
 
   return (
@@ -107,7 +109,7 @@ const Movies = () => {
   );
 }
 
-export default Movies;
+export {Movies};
 
 
 
