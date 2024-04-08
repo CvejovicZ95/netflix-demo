@@ -3,10 +3,7 @@ node_modules
 videos
 /.pnp
 .pnp.js
-.env
-package-lock.json
-package.json
-TODO.txt
+
 # testing
 /coverage
 
