@@ -29,8 +29,8 @@ const useStartStreaming = () => {
       });
 
       videoPlayer.ready(function() {
+        // eslint-disable-next-line
         const controlBar = this.controlBar;
-        console.log(controlBar);
       });
 
       videoPlayer.load();

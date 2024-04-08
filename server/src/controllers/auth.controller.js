@@ -56,9 +56,10 @@ export const login=async(req,res)=>{
       return res.status(400).json({error:'Invalid email or password'})
     }
 
-    generateTokenAndSetCookie(user._id,res)
+    const token=generateTokenAndSetCookie(user._id,res)
 
     res.status(200).json({
+      token:token,
       _id:user._id,
       email:user.email,
       phoneNumber:user.phoneNumber
@@ -79,9 +80,10 @@ export const homePageLogin=async(req,res)=>{
       return res.status(400).json({error:'Invlaid email'})
     }
 
-    generateTokenAndSetCookie(user._id,res)
+    const token=generateTokenAndSetCookie(user._id,res)
 
     res.status(200).json({
+      token:token,
       _id:user._id,
       email:user.email,
       phoneNumber:user.phoneNumber
