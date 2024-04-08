@@ -1,6 +1,6 @@
 .HomePage{
-  text-align: center; /* Centriraj tekst unutar glavnog dijela */
-  margin-top: 90px; /* Prilagodi margine prema potrebama */
+  text-align: center; 
+  margin-top: 90px; 
   color: white;
 }
 .HomePage h1{
@@ -18,9 +18,9 @@
   border: 1px solid silver;
   border-radius: 5px;
   font-size: 22px;
-  background-color: rgba(255, 255, 255, 0.1); /* Prozirna bijela boja */
-  color: white; /* Boja teksta */
-  outline: none; /* Uklonite obris kada je input fokusiran */
+  background-color: rgba(255, 255, 255, 0.1); 
+  color: white; 
+  outline: none;
   vertical-align: middle;
   margin: 5px;
 }

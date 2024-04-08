@@ -35,7 +35,6 @@ const useHomePageLogin=()=>{
 
 export {useHomePageLogin}
 
-
 function handleInputErrors({email}){
   if(!email){
     toast.error('Please fill in all fields')

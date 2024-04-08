@@ -14,11 +14,8 @@ const useStartStreaming = () => {
       }
 
       const movieData = await res.json();
-      //console.log(movieData)
       const movieFolder = encodeURIComponent(movieData.videoFolder)
-      //console.log(movieFolder)
       const videoPath = `http://localhost:4500/api/stream/${movieFolder}`;
-      //console.log(videoPath)
 
       const videoPlayer = videojs('my-video', { controls: true });
 

@@ -9,7 +9,6 @@ import { homePageLogin } from './src/controllers/auth.controller.js'
 import { getMovies } from './src/controllers/movies.controller.js'
 import {movieRouter} from './src/routes/movie.routes.js'
 
-
 const app=express();
 dotenv.config();
 
@@ -29,7 +28,6 @@ app.get('/api/movies',getMovies)
 
 app.use('/api/auth',authRouter)
 app.use('/api',movieRouter)
-
 
 app.listen(PORT,()=>{
   connect();

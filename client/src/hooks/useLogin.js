@@ -1,4 +1,3 @@
-
 import { toast } from 'react-toastify';
 import { useAuthContext } from "../context/AuthContext"
 
@@ -35,7 +34,6 @@ const useLogin=()=>{
 }
 
 export {useLogin}
-
 
 function handleInputErrors({email,password}){
   if( !email || !password){

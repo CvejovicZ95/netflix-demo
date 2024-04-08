@@ -8,7 +8,6 @@ const useRegister=()=>{
   const [registration,setRegistration]=useState(false)
   const {setAuthUser}=useAuthContext()
  
-
   const register=async({email,password,confirmPassword,phoneNumber})=>{
     const success = handleInputErrors({email,password,confirmPassword,phoneNumber})
     if(!success) return;
@@ -49,12 +48,10 @@ function handleInputErrors({email,password,confirmPassword,phoneNumber}){
     toast.error('Passwords do not match')
     return false
   }
-
   if(password.length < 6){
     toast.error('Password must be at least 6 characters')
     return false
   }
-
   return true
 }
 

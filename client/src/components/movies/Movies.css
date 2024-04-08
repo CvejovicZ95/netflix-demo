@@ -85,15 +85,14 @@
 
 
 @media only screen and (max-width: 768px) {
-  /* Stilovi za prikaz proizvoda po jedan u redu */
   .movies-list {
-    display: block; /* Postavljamo proizvode da budu jedan ispod drugog */
+    display: block; 
     text-align: center;
   }
   
   .movie-container {
-    width: 100%; /* Postavljamo širinu proizvoda na 100% kako bi zauzeli celu širinu ekrana */
-    margin-bottom: 20px; /* Dodajemo razmak između proizvoda */
+    width: 100%; 
+    margin-bottom: 20px;
   }
   .movie-container img{
     width: 60%;
