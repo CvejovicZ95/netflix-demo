@@ -25,7 +25,6 @@ const movieSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  // Dodaj novi field za folder
   videoFolder: {
     type: String,
     required: true,

@@ -1,4 +1,4 @@
-import Movie from '../models/movieSchema.js';
+import Movie from '../models/movieSchema.js'
 import path from 'path';
 import fs from 'fs';
 import multer from 'multer';

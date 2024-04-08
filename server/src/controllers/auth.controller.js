@@ -1,6 +1,6 @@
-import User from '../models/usersSchema.js';
+import User from '../models/usersSchema.js'
 import bcrypt from 'bcrypt';
-import generateTokenAndSetCookie from '../utils/generateToken.js';
+import generateTokenAndSetCookie from '../utils/generateToken.js'
 
 export const register = async (req,res)=>{
   try{
