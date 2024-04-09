@@ -1,6 +1,8 @@
 import { toast } from 'react-toastify';
 import { useAuthContext } from "../context/AuthContext"
 import { setCookie } from './useSetCookie';
+import { loginUser } from '../api/netflixApi';
+
 const useLogin=()=>{
   const {login} = useAuthContext()
   
@@ -9,16 +11,7 @@ const useLogin=()=>{
     if(!success) return
 
     try{
-      const res = await fetch('http://localhost:4500/api/auth/login',{
-        method:"POST",
-        headers:{'Content-Type':"application/json"},
-        body:JSON.stringify({email,password})
-      })
-
-      const data = await res.json();
-      if (data.error) {
-        throw new Error("Invalid email or password");
-      }
+      const data = await loginUser(email, password);
 
       login(data)
       setCookie('token',data.token,30)
@@ -31,10 +24,6 @@ const useLogin=()=>{
 
 export {useLogin}
 
-function handleInputErrors({email,password}){
-  if( !email || !password){
-    toast.error('Please fill in all fields')
-    return false
-  }
-  return true
+function handleInputErrors({ email, password }) {
+  return (!email || !password) ? (toast.error('Please fill in all fields'), false) : true;
 }

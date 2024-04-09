@@ -1,11 +1,1 @@
-fix middleware, token-undefined for protect route
-
-useGetMovies -
-useHomePageLogin - (sredio localstorage, nema ga vise / )
-useLogin - (sredio error invalid username i password / )
-useLogout -
-useRegister - (sredio localstorage i errore(PITATI BOGIJA DA LI JE DOBRO) / )
-useStartStreaming - (refakorisao ceo file /  )
-useUpload (ok je)
-
-//sutra netflixApi.js prebaciti fetch!
+fix middleware

@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
 import { setCookie } from './useSetCookie';
+import { registerUser } from '../api/netflixApi';
 
 const useRegister=()=>{
 
@@ -14,17 +15,8 @@ const useRegister=()=>{
     if(!success) return;
 
     try{
-      const res=await fetch('http://localhost:4500/api/auth/register',{
-        method:"POST",
-        headers:{'Content-Type':"application/json"},
-        body:JSON.stringify({email,password,confirmPassword,phoneNumber})
-      })
-
-      const data=await res.json()
-      if(data.error){
-        throw new Error(data.error)
-      }
-
+      const data = await registerUser({ email, password, confirmPassword, phoneNumber });
+      
       login(data)
       setCookie('token',data.token,30)
       setRegistration(true)

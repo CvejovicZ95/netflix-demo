@@ -1,18 +1,8 @@
 import { toast } from 'react-toastify';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
+import { fetchMovieData, getVideoPath } from '../api/netflixApi';
 
-const fetchData = async (movieId) => {
-  try {
-    const res = await fetch(`http://localhost:4500/api/movies/${movieId}`);
-    if (!res.ok) {
-      throw new Error('Failed to fetch movie data');
-    }
-    return await res.json();
-  } catch (error) {
-    throw new Error('Failed to fetch movie data');
-  }
-};
 
 const playVideo = (videoPath) => {
   const videoPlayer = videojs('my-video', { controls: true });
@@ -37,12 +27,11 @@ const playVideo = (videoPath) => {
 const useStartStreaming = () => {
   const stream = async (movieId) => {
     try {
-      const movieData = await fetchData(movieId);
+      const movieData = await fetchMovieData(movieId);
       handleInputErrors({ movieId });
 
-      const movieFolder = encodeURIComponent(movieData.videoFolder);
-      const videoPath = `http://localhost:4500/api/stream/${movieFolder}`;
-      playVideo(videoPath);
+      const videoPath = getVideoPath(movieData.videoFolder);
+      playVideo(videoPath)
     } catch (error) {
       toast.error(error.message);
     }

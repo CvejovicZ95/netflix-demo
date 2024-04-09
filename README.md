@@ -27,7 +27,7 @@ This project involves an app where registered users can both watch movies and up
 ## Environment Variables (Server Folder):
 - `DATABASE`: MongoDB connection string  
 - `PORT`: Port (e.g., 4500)
-- `SECRET_KEY`: Git bash(openssl rand -base64 32)
+
 
 ## Start Scripts:
 - **Server:**

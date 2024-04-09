@@ -1,5 +1,6 @@
 import {useEffect,useState} from 'react'
 import { toast } from 'react-toastify';
+import { fetchMovies } from '../api/netflixApi';
 
 const useGetMovies=()=>{
   const [movies,setMovies]=useState([])
@@ -9,12 +10,8 @@ const useGetMovies=()=>{
     const getMovies=async()=>{
       setLoading(true)
       try{
-        const res = await fetch('http://localhost:4500/api/movies')
-        const data= await res.json()
-        if(data.error){
-          throw new Error(data.error)
-        }
-        setMovies(data)
+        const moviesData = await fetchMovies();
+        setMovies(moviesData);
       }catch(error){
         toast.error(error.message)
       }finally{
