@@ -3,10 +3,8 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// Dobijte apsolutnu putanju do direktorija gdje se nalazi trenutni modul
 const currentDir = path.dirname(fileURLToPath(import.meta.url));
 
-// Učitajte apsolutnu putanju do config.json datoteke
 const configPath = path.resolve(currentDir, '../../config.json');
 const configData = fs.readFileSync(configPath);
 const config = JSON.parse(configData);
