@@ -1,27 +1,20 @@
 import { useAuthContext } from "../context/AuthContext";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { logoutUser } from "../api/netflixApi";
 
 const useLogout=()=>{
-  const {setAuthUser}=useAuthContext()
+  const {logout}=useAuthContext()
 
-  const logout=async()=>{
+  const logoutHandler=async()=>{
     try{  
-      const res=await fetch('http://localhost:4500/api/auth/logout',{
-        method:"POST",
-        headers:{'Content-Type':"application/json"},
-      })
-      const data=await res.json()
-      if(data.error){
-        throw new Error(data.error)
-      }
-      localStorage.removeItem('netflix-user')
-      setAuthUser(null)
+      await logoutUser();
+      logout();
     }catch(error){
       toast.error(error.message)
   }
 }
-  return {logout}
+  return {logoutHandler}
 }
 
-export default useLogout
+export {useLogout}

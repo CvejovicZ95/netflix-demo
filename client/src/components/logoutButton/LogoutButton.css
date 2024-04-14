@@ -1,0 +1,38 @@
+.logout-button,.upload-button {
+  background-color: red;
+  padding: 8px;
+  transition: inherit;
+  border-style: solid;
+  border-width: 0.0625rem;
+  border-radius: 0.1875rem;
+  border-color: red;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 2px;
+  margin-right: 100px;
+}
+
+.logout-button:hover, .upload-button:hover{
+  background-color: rgb(221, 0, 0);
+}
+@media only screen and (max-width: 768px) {
+  .logout-button,.upload-button {
+    background-color: red;
+    padding: 8px;
+    transition: inherit;
+    border-style: solid;
+    border-width: 0.0625rem;
+    border-radius: 0.1875rem;
+    border-color: red;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 2px;
+  }
+  
+}

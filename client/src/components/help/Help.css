@@ -1,0 +1,20 @@
+.helpPage{
+  text-align: center;
+  color:white;
+  font-weight: bold;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 60px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.helpPage h1{
+  font-size: 56px;
+}
+.helpPage p{
+  font-size: 24px;
+}
+.helpPage h2{
+  font-size: 48px;
+}
