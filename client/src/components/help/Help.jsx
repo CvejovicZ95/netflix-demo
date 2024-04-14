@@ -1,4 +1,4 @@
-import {Logo} from "../logo/Logo"
+import {Logo} from "../Logo/Logo"
 import "./Help.css";
 
 const Help=()=>{

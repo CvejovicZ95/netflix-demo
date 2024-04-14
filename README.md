@@ -5,7 +5,7 @@ This project involves an app where registered users can both watch movies and up
 
 ## Features:
 - **Authentication:**
-  - For authentication, Jason Web Tokens (JWT) are used.
+  - For authentication, Json Web Tokens (JWT) are used.
   - JWT is saved in local storage and sent on request where necessary.
 - **Users:**
   - Sign up
@@ -27,7 +27,6 @@ This project involves an app where registered users can both watch movies and up
 ## Environment Variables (Server Folder):
 - `DATABASE`: MongoDB connection string  
 - `PORT`: Port (e.g., 4500)
-
 
 ## Start Scripts:
 - **Server:**

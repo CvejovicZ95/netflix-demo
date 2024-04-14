@@ -1,7 +1,7 @@
 import { useState } from "react";
-import {Logo} from "../logo/Logo"
+import {Logo} from "../Logo/Logo"
 import { Link } from "react-router-dom";
-import {Logout} from "../logoutButton/LogoutButton"
+import {Logout} from "../LogoutButton/LogoutButton"
 import { FaSearch } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "./MoviesHeader.css";

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import {Logo} from "../logo/Logo"
+import {Logo} from "../Logo/Logo"
 import { useState } from "react"
 import {useRegister} from "../../hooks/useRegister"
 import { ToastContainer } from "react-toastify"

@@ -1,5 +1,5 @@
-import {Logo} from "../logo/Logo"
-import {Logout} from "../logoutButton/LogoutButton"
+import {Logo} from "../Logo/Logo"
+import {Logout} from "../LogoutButton/LogoutButton"
 import { useState } from "react"
 import {useUpload} from "../../hooks/useUpload"
 import { ToastContainer } from "react-toastify"
