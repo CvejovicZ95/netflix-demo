@@ -1,15 +1,15 @@
-import {Header} from "../Layout/Header/Header"
-import {HomePage} from "../Layout/HomePage/HomePage"
+import { Header } from "./Header/Header"
+import { HomePage } from "./HomePage/HomePage"
 import { Outlet } from 'react-router-dom';
 
-const Layout=()=>{
-  return(
+const Layout = () => {
+  return (
     <div className="App">
-      <Header/>
-      <HomePage/>
-      <Outlet/>
+      <Header />
+      <HomePage />
+      <Outlet />
     </div>
   )
 }
 
-export {Layout}
+export { Layout }
