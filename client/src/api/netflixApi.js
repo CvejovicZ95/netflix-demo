@@ -1,8 +1,9 @@
-const API_BASE_URL = 'http://localhost:4500';
+import config from "../config.json"
+const apiUrl = config.REACT_APP_API_BASE_URL
 
 export const fetchMovies = async () => {
   try {
-    const res = await fetch(`${API_BASE_URL}/api/movies`);
+    const res = await fetch(`${apiUrl}/api/movies`);
     const data = await res.json();
     if (data.error) {
       throw new Error(data.error);
@@ -15,7 +16,7 @@ export const fetchMovies = async () => {
 
 export const homePageLogin = async (email) => {
   try {
-    const res = await fetch(`${API_BASE_URL}`, {
+    const res = await fetch(`${apiUrl}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),
@@ -32,7 +33,7 @@ export const homePageLogin = async (email) => {
 
 export const loginUser = async (email, password) => {
   try {
-    const res = await fetch(`${API_BASE_URL}/api/auth/login`, {
+    const res = await fetch(`${apiUrl}/api/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
@@ -49,7 +50,7 @@ export const loginUser = async (email, password) => {
 
 export const logoutUser = async () => {
   try {
-    const res = await fetch(`${API_BASE_URL}/api/auth/logout`, {
+    const res = await fetch(`${apiUrl}/api/auth/logout`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     });
@@ -64,7 +65,7 @@ export const logoutUser = async () => {
 
 export const registerUser = async ({ email, password, confirmPassword, phoneNumber }) => {
   try {
-    const res = await fetch(`${API_BASE_URL}/api/auth/register`, {
+    const res = await fetch(`${apiUrl}/api/auth/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password, confirmPassword, phoneNumber }),
@@ -81,7 +82,7 @@ export const registerUser = async ({ email, password, confirmPassword, phoneNumb
 
 export const fetchMovieData = async (movieId) => {
   try {
-    const res = await fetch(`${API_BASE_URL}/api/movies/${movieId}`);
+    const res = await fetch(`${apiUrl}/api/movies/${movieId}`);
     if (!res.ok) {
       throw new Error('Failed to fetch movie data');
     }
@@ -93,7 +94,7 @@ export const fetchMovieData = async (movieId) => {
 
 export const getVideoPath = (videoFolder) => {
   const movieFolder = encodeURIComponent(videoFolder);
-  return `${API_BASE_URL}/api/stream/${movieFolder}`;
+  return `${apiUrl}/api/stream/${movieFolder}`;
 };
 
 export const uploadMovie = async ({ title, description, length, type, imageUrl, category, videoFolder }) => {
@@ -107,7 +108,7 @@ export const uploadMovie = async ({ title, description, length, type, imageUrl, 
     formData.append('category', category);
     formData.append('video', videoFolder);
 
-    const res = await fetch(`${API_BASE_URL}/api/movies`, {
+    const res = await fetch(`${apiUrl}/api/movies`, {
       method: "POST",
       body: formData
     });
