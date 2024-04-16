@@ -1,42 +1,59 @@
-import {useAuthContext} from '../context/AuthContext';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { useState } from 'react';
-import { setCookie } from './useSetCookie';
-import { registerUser } from '../api/netflixApi';
+import { useAuthContext } from "../context/AuthContext";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
+import { setCookie } from "./useSetCookie";
+import { registerUser } from "../api/netflixApi";
 
-const useRegister=()=>{
+const useRegister = () => {
+  const [registration, setRegistration] = useState(false);
+  const { login } = useAuthContext();
 
-  const [registration,setRegistration]=useState(false)
-  const {login}=useAuthContext()
- 
-  const register=async({email,password,confirmPassword,phoneNumber})=>{
-    const success = handleInputErrors({email,password,confirmPassword,phoneNumber})
-    if(!success) return;
+  const register = async ({
+    email,
+    password,
+    confirmPassword,
+    phoneNumber,
+  }) => {
+    const success = handleInputErrors({
+      email,
+      password,
+      confirmPassword,
+      phoneNumber,
+    });
+    if (!success) return;
 
-    try{
-      const data = await registerUser({ email, password, confirmPassword, phoneNumber });
-      
-      login(data)
-      setCookie('token',data.token,30)
-      setRegistration(true)
-    }catch(error){
-      setRegistration(false)
-      toast.error(error.message)
+    try {
+      const data = await registerUser({
+        email,
+        password,
+        confirmPassword,
+        phoneNumber,
+      });
+
+      login(data);
+      setCookie("token", data.token, 30);
+      setRegistration(true);
+    } catch (error) {
+      setRegistration(false);
+      toast.error(error.message);
     }
-  }
+  };
 
-  return {registration,register}
-}
+  return { registration, register };
+};
 
-export {useRegister}
+export { useRegister };
 
 function handleInputErrors({ email, password, confirmPassword, phoneNumber }) {
   const errorMessage =
-    (!email || !password || !confirmPassword || !phoneNumber) ? 'Please fill in all fields' :
-    (password !== confirmPassword) ? 'Passwords do not match' :
-    (password.length < 6) ? 'Password must be at least 6 characters' :
-    '';
+    !email || !password || !confirmPassword || !phoneNumber
+      ? "Please fill in all fields"
+      : password !== confirmPassword
+        ? "Passwords do not match"
+        : password.length < 6
+          ? "Password must be at least 6 characters"
+          : "";
 
   if (errorMessage) {
     showToast(errorMessage);
@@ -49,6 +66,3 @@ function handleInputErrors({ email, password, confirmPassword, phoneNumber }) {
 function showToast(message) {
   toast.error(message);
 }
-
-
-

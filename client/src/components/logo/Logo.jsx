@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
-import { useAuthContext } from '../../context/AuthContext'
+import React from "react";
+import { Link } from "react-router-dom";
+import { useAuthContext } from "../../context/AuthContext";
 
 const Logo = () => {
   const { authUser } = useAuthContext();
@@ -19,4 +20,4 @@ const Logo = () => {
   );
 };
 
-export {Logo}
+export { Logo };

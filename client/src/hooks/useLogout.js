@@ -1,20 +1,20 @@
 import { useAuthContext } from "../context/AuthContext";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { logoutUser } from "../api/netflixApi";
 
-const useLogout=()=>{
-  const {logout}=useAuthContext()
+const useLogout = () => {
+  const { logout } = useAuthContext();
 
-  const logoutHandler=async()=>{
-    try{  
+  const logoutHandler = async () => {
+    try {
       await logoutUser();
       logout();
-    }catch(error){
-      toast.error(error.message)
-  }
-}
-  return {logoutHandler}
-}
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+  return { logoutHandler };
+};
 
-export {useLogout}
+export { useLogout };

@@ -1,6 +1,7 @@
-import { Header } from "./Header/Header"
-import { HomePage } from "./HomePage/HomePage"
-import { Outlet } from 'react-router-dom';
+import React from "react";
+import { Header } from "./Header/Header";
+import { HomePage } from "./HomePage/HomePage";
+import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
@@ -9,7 +10,7 @@ const Layout = () => {
       <HomePage />
       <Outlet />
     </div>
-  )
-}
+  );
+};
 
-export { Layout }
+export { Layout };

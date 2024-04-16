@@ -1,10 +1,12 @@
+import React from "react";
 import { useState } from "react";
-import {Logo} from "../Logo/Logo"
+import { Logo } from "../Logo/Logo";
 import { Link } from "react-router-dom";
-import {Logout} from "../LogoutButton/LogoutButton"
+import { Logout } from "../LogoutButton/LogoutButton";
 import { FaSearch } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "./MoviesHeader.css";
+import PropTypes from "prop-types";
 
 const MoviesHeader = ({ setSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,7 +14,7 @@ const MoviesHeader = ({ setSearch }) => {
   const handleSearch = (e) => {
     const value = e.target.value;
     setSearchTerm(value);
-  
+
     if (value === "") {
       setSearch("");
     } else {
@@ -21,7 +23,7 @@ const MoviesHeader = ({ setSearch }) => {
       }
       setSearch(value);
     }
-  }
+  };
 
   return (
     <div className="moviesHeader">
@@ -34,10 +36,10 @@ const MoviesHeader = ({ setSearch }) => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-          <FaSearch
-            className="fa-search"
-            style={{ color: "red", fontSize: "26px" }}
-          />
+        <FaSearch
+          className="fa-search"
+          style={{ color: "red", fontSize: "26px" }}
+        />
       </form>
       <div>
         <Link to="/upload">
@@ -49,4 +51,5 @@ const MoviesHeader = ({ setSearch }) => {
   );
 };
 
-export {MoviesHeader};
+MoviesHeader.propTypes = { setSearch: PropTypes.func };
+export { MoviesHeader };
