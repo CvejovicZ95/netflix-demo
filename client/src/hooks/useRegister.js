@@ -1,9 +1,9 @@
-import {useAuthContext} from '../context/AuthContext.jsx';
+import {useAuthContext} from '../context/AuthContext';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
-import { setCookie } from './useSetCookie.js';
-import { registerUser } from '../api/netflixApi.js';
+import { setCookie } from './useSetCookie';
+import { registerUser } from '../api/netflixApi';
 
 const useRegister=()=>{
 

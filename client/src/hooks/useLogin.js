@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
-import { useAuthContext } from "../context/AuthContext.jsx"
-import { setCookie } from './useSetCookie.js';
-import { loginUser } from '../api/netflixApi.js';
+import { useAuthContext } from "../context/AuthContext"
+import { setCookie } from './useSetCookie';
+import { loginUser } from '../api/netflixApi';
 
 const useLogin=()=>{
   const {login} = useAuthContext()

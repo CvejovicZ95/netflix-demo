@@ -1,4 +1,3 @@
-/* global document */
 function setCookie(name, value, minutes) {
   var expires = "";
   if (minutes) {

@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
-import { fetchMovieData, getVideoPath } from '../api/netflixApi.js';
+import { fetchMovieData, getVideoPath } from '../api/netflixApi';
 
 
 const playVideo = (videoPath) => {

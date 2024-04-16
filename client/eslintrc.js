@@ -1,22 +1,21 @@
-{
-  "env": {
-    "browser": true,
-    "node": true,
-    "es6": true,
-    "jest": true
+module.exports = {
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+    jest: true
   },
-  "extends": [
+  extends: [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended"
   ],
-  "rules": {
+  rules: {
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "auto"
+        endOfLine: "auto"
       }
     ]
   }
 }
-

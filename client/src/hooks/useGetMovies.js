@@ -1,6 +1,6 @@
 import {useEffect,useState} from 'react'
 import { toast } from 'react-toastify';
-import { fetchMovies } from '../api/netflixApi.js';
+import { fetchMovies } from '../api/netflixApi';
 
 const useGetMovies=()=>{
   const [movies,setMovies]=useState([])

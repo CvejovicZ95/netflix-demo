@@ -1,6 +1,3 @@
-/* global fetch */
-/* global FormData */
-/* global process */
 const apiUrl = process.env.REACT_APP_NETFLIX_API_URL;
 
 export const fetchMovies = async () => {
