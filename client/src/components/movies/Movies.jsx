@@ -1,8 +1,9 @@
+import React from "react";
 import { useState, useEffect } from "react";
-import {MoviesHeader} from "./MoviesHeader"
-import {useGetMovies} from "../../hooks/useGetMovies";
-import {useStartStreaming} from "../../hooks/useStartStreaming";
-import videojs from 'video.js';
+import { MoviesHeader } from "./MoviesHeader";
+import { useGetMovies } from "../../hooks/useGetMovies";
+import { useStartStreaming } from "../../hooks/useStartStreaming";
+import videojs from "video.js";
 import "./Movies.css";
 
 const Movies = () => {
@@ -11,7 +12,7 @@ const Movies = () => {
   const [search, setSearch] = useState("");
   const [isPlaying, setIsPlaying] = useState(false);
   const [player, setPlayer] = useState(null);
-  const [showOtherMoviesButton, setShowOtherMoviesButton] = useState(false); 
+  const [showOtherMoviesButton, setShowOtherMoviesButton] = useState(false);
 
   const handlePlay = (movieId) => {
     stream(movieId);
@@ -21,19 +22,20 @@ const Movies = () => {
 
   const handleOtherMovies = () => {
     setIsPlaying(false);
-    setShowOtherMoviesButton(false); 
+    setShowOtherMoviesButton(false);
   };
 
-  const filteredMovies = movies.filter(movie =>
-    movie.title.toLowerCase().includes(search.toLowerCase()) ||
-    movie.type.toLowerCase().includes(search.toLowerCase())
+  const filteredMovies = movies.filter(
+    (movie) =>
+      movie.title.toLowerCase().includes(search.toLowerCase()) ||
+      movie.type.toLowerCase().includes(search.toLowerCase()),
   );
 
   useEffect(() => {
     if (isPlaying) {
       const videoJsOptions = {
         controlBar: {
-          progressControl: true, 
+          progressControl: true,
           remainingTimeDisplay: false,
           durationDisplay: false,
           currentTimeDisplay: false,
@@ -41,7 +43,7 @@ const Movies = () => {
         },
       };
 
-      const videoElement = document.getElementById('my-video');
+      const videoElement = document.getElementById("my-video");
       const newPlayer = videojs(videoElement, videoJsOptions);
 
       setPlayer(newPlayer);
@@ -63,14 +65,16 @@ const Movies = () => {
     <>
       {!isPlaying && (
         <MoviesHeader
-        setSearch={setSearch} 
-        setShowOtherMoviesButton={setShowOtherMoviesButton} 
-      />
+          setSearch={setSearch}
+          setShowOtherMoviesButton={setShowOtherMoviesButton}
+        />
       )}
       {isPlaying && <video id="my-video" className="video-js" controls></video>}
       <div className="movies-list">
-        {!isPlaying && showOtherMoviesButton ? ( 
-          <button className="other-movies-button" onClick={handleOtherMovies}>Other Movies</button>
+        {!isPlaying && showOtherMoviesButton ? (
+          <button className="other-movies-button" onClick={handleOtherMovies}>
+            Other Movies
+          </button>
         ) : (
           <>
             {filteredMovies.length > 0 ? (
@@ -97,20 +101,18 @@ const Movies = () => {
                 </div>
               ))
             ) : (
-              <h1 className="no-movies" style={{ color: "white", fontSize: "40px" }}>
+              <h1
+                className="no-movies"
+                style={{ color: "white", fontSize: "40px" }}
+              >
                 Lights, camera, no action! No movies found.
               </h1>
             )}
           </>
         )}
-        
       </div>
     </>
   );
-}
+};
 
-export {Movies};
-
-
-
-
+export { Movies };

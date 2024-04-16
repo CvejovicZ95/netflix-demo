@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 export const AuthContext = createContext();
 
@@ -11,16 +12,16 @@ export const AuthContextProvider = ({ children }) => {
 
   const login = (userData) => {
     setAuthUser(userData);
-    localStorage.setItem('authUser', JSON.stringify(userData));
+    localStorage.setItem("authUser", JSON.stringify(userData));
   };
 
   const logout = () => {
     setAuthUser(null);
-    localStorage.removeItem('authUser');
+    localStorage.removeItem("authUser");
   };
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('authUser');
+    const storedUser = localStorage.getItem("authUser");
     if (storedUser) {
       setAuthUser(JSON.parse(storedUser));
     }
@@ -32,3 +33,4 @@ export const AuthContextProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+AuthContextProvider.propTypes = { children: PropTypes.any };

@@ -16,8 +16,8 @@ export const fetchMovies = async () => {
 export const homePageLogin = async (email) => {
   try {
     const res = await fetch(`${apiUrl}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
     });
     const data = await res.json();
@@ -33,8 +33,8 @@ export const homePageLogin = async (email) => {
 export const loginUser = async (email, password) => {
   try {
     const res = await fetch(`${apiUrl}/api/auth/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
     const data = await res.json();
@@ -50,8 +50,8 @@ export const loginUser = async (email, password) => {
 export const logoutUser = async () => {
   try {
     const res = await fetch(`${apiUrl}/api/auth/logout`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
     });
     const data = await res.json();
     if (data.error) {
@@ -62,11 +62,16 @@ export const logoutUser = async () => {
   }
 };
 
-export const registerUser = async ({ email, password, confirmPassword, phoneNumber }) => {
+export const registerUser = async ({
+  email,
+  password,
+  confirmPassword,
+  phoneNumber,
+}) => {
   try {
     const res = await fetch(`${apiUrl}/api/auth/register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password, confirmPassword, phoneNumber }),
     });
     const data = await res.json();
@@ -83,11 +88,11 @@ export const fetchMovieData = async (movieId) => {
   try {
     const res = await fetch(`${apiUrl}/api/movies/${movieId}`);
     if (!res.ok) {
-      throw new Error('Failed to fetch movie data');
+      throw new Error("Failed to fetch movie data");
     }
     return await res.json();
   } catch (error) {
-    throw new Error('Failed to fetch movie data');
+    throw new Error("Failed to fetch movie data");
   }
 };
 
@@ -96,20 +101,28 @@ export const getVideoPath = (videoFolder) => {
   return `${apiUrl}/api/stream/${movieFolder}`;
 };
 
-export const uploadMovie = async ({ title, description, length, type, imageUrl, category, videoFolder }) => {
+export const uploadMovie = async ({
+  title,
+  description,
+  length,
+  type,
+  imageUrl,
+  category,
+  videoFolder,
+}) => {
   try {
     const formData = new FormData();
-    formData.append('title', title);
-    formData.append('description', description);
-    formData.append('length', length);
-    formData.append('type', type);
-    formData.append('imageUrl', imageUrl);
-    formData.append('category', category);
-    formData.append('video', videoFolder);
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("length", length);
+    formData.append("type", type);
+    formData.append("imageUrl", imageUrl);
+    formData.append("category", category);
+    formData.append("video", videoFolder);
 
     const res = await fetch(`${apiUrl}/api/movies`, {
       method: "POST",
-      body: formData
+      body: formData,
     });
 
     const data = await res.json();

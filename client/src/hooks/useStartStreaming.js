@@ -1,21 +1,20 @@
-import { toast } from 'react-toastify';
-import videojs from 'video.js';
-import 'video.js/dist/video-js.css';
-import { fetchMovieData, getVideoPath } from '../api/netflixApi';
-
+import { toast } from "react-toastify";
+import videojs from "video.js";
+import "video.js/dist/video-js.css";
+import { fetchMovieData, getVideoPath } from "../api/netflixApi";
 
 const playVideo = (videoPath) => {
-  const videoPlayer = videojs('my-video', { controls: true });
+  const videoPlayer = videojs("my-video", { controls: true });
   videoPlayer.src({
     src: videoPath,
-    type: 'video/mp4'
+    type: "video/mp4",
   });
 
-  videoPlayer.on('fullscreenchange', function() {
-    this.trigger('controlsenabled');
+  videoPlayer.on("fullscreenchange", function () {
+    this.trigger("controlsenabled");
   });
 
-  videoPlayer.ready(function() {
+  videoPlayer.ready(function () {
     // eslint-disable-next-line
     const controlBar = this.controlBar;
   });
@@ -31,7 +30,7 @@ const useStartStreaming = () => {
       handleInputErrors({ movieId });
 
       const videoPath = getVideoPath(movieData.videoFolder);
-      playVideo(videoPath)
+      playVideo(videoPath);
     } catch (error) {
       toast.error(error.message);
     }
@@ -42,9 +41,8 @@ const useStartStreaming = () => {
 
 export { useStartStreaming };
 
-
 const handleInputErrors = ({ movieId }) => {
   if (!movieId) {
-    throw new Error('Movie ID is required');
+    throw new Error("Movie ID is required");
   }
 };

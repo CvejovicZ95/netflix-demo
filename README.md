@@ -1,9 +1,11 @@
 # Netflix
 
-## Project Overview:
+## Project Overview
+
 This project involves an app where registered users can both watch movies and upload their own movies. The platform aims to provide a diverse selection of films while empowering users to contribute their own content, fostering a dynamic and engaging streaming experience.
 
-## Features:
+## Features
+
 - **Authentication:**
   - For authentication, Json Web Tokens (JWT) are used.
   - JWT is saved in local storage and sent on request where necessary.
@@ -16,7 +18,8 @@ This project involves an app where registered users can both watch movies and up
   - Upload movies
   - Watch movies
 
-## Technologies Used:
+## Technologies Used
+
 - React
 - JavaScript
 - Node.js
@@ -24,11 +27,13 @@ This project involves an app where registered users can both watch movies and up
 - MongoDB
 - CSS3
 
-## Environment Variables (Server Folder):
+## Environment Variables (Server Folder)
+
 - `DATABASE`: MongoDB connection string  
 - `PORT`: Port (e.g., 4500)
 
-## Start Scripts:
+## Start Scripts
+
 - **Server:**
   - `nodemon server`
 - **Client:**
