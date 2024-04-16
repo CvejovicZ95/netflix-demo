@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from 'react';
-import { uploadMovie } from '../api/netflixApi';
+import { uploadMovie } from '../api/netflixApi.js';
 
 const useUpload = () => {
   const [uploaded, setUploaded] = useState(false)

@@ -1,7 +1,7 @@
-import { useAuthContext } from "../context/AuthContext";
+import { useAuthContext } from "../context/AuthContext.jsx";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { logoutUser } from "../api/netflixApi";
+import { logoutUser } from "../api/netflixApi.js";
 
 const useLogout=()=>{
   const {logout}=useAuthContext()

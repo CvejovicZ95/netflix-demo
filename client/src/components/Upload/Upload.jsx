@@ -1,4 +1,4 @@
-import {Logo} from "../Logo/Logo"
+import {Logo} from "../Logo/Logo.jsx"
 import {Logout} from "../LogoutButton/LogoutButton"
 import { useState } from "react"
 import {useUpload} from "../../hooks/useUpload"
