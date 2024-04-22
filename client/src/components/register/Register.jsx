@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Logo } from "../Logo/Logo";
+import { Logo } from "../logo/Logo";
 import { useState } from "react";
 import { useRegister } from "../../hooks/useRegister";
 import { ToastContainer } from "react-toastify";

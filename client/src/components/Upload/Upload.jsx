@@ -1,6 +1,6 @@
 import React from "react";
-import { Logo } from "../Logo/Logo";
-import { Logout } from "../LogoutButton/LogoutButton";
+import { Logo } from "../logo/Logo";
+import { Logout } from "../logoutButton/LogoutButton";
 import { useState } from "react";
 import { useUpload } from "../../hooks/useUpload";
 import { ToastContainer } from "react-toastify";
