@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { useHomePageLogin } from "../../../hooks/useHomePageLogin.js";
+import { useHomePageLogin } from "../../../hooks/useHomePageLogin";
 import { Navigate } from "react-router-dom";
 import "./HomePage.css";
 
-const HomePage = () => {
+export const HomePage = () => {
   const [email, setEmail] = useState("");
   const [loginCheck, setLoginCheck] = useState(false);
   const { loginHandler, loginError } = useHomePageLogin();
@@ -37,5 +37,3 @@ const HomePage = () => {
     </div>
   );
 };
-
-export { HomePage };

@@ -1,14 +1,14 @@
 import React from "react";
 import { useState } from "react";
-import { Logo } from "../Logo/Logo";
+import { Logo } from "../logo/Logo";
 import { Link } from "react-router-dom";
-import { Logout } from "../LogoutButton/LogoutButton";
+import { Logout } from "../logoutButton/LogoutButton";
 import { FaSearch } from "react-icons/fa";
 import { toast } from "react-toastify";
 import "./MoviesHeader.css";
 import PropTypes from "prop-types";
 
-const MoviesHeader = ({ setSearch }) => {
+export const MoviesHeader = ({ setSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (e) => {
@@ -52,4 +52,3 @@ const MoviesHeader = ({ setSearch }) => {
 };
 
 MoviesHeader.propTypes = { setSearch: PropTypes.func };
-export { MoviesHeader };

@@ -1,14 +1,14 @@
 import React from "react";
 import { Layout } from "./components/Layout/Layout";
-import { Login } from "./components/Login/Login";
-import { Register } from "./components/Register/Register";
-import { Help } from "./components/Help/Help";
-import { Movies } from "./components/Movies/Movies";
-import { Upload } from "./components/Upload/Upload";
+import { Login } from "./components/login/Login";
+import { Register } from "./components/register/Register";
+import { Help } from "./components/help/Help";
+import { Movies } from "./components/movies/Movies";
+import { Upload } from "./components/upload/Upload";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { useAuthContext } from "./context/AuthContext";
 
-function App() {
+export function App() {
   const { authUser } = useAuthContext();
   return (
     <Routes>
@@ -35,5 +35,3 @@ function App() {
     </Routes>
   );
 }
-
-export { App };

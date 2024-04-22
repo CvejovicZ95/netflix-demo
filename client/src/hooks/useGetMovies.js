@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { fetchMovies } from "../api/netflixApi";
 
-const useGetMovies = () => {
+export const useGetMovies = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -23,5 +23,3 @@ const useGetMovies = () => {
 
   return { loading, movies };
 };
-
-export { useGetMovies };

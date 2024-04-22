@@ -5,7 +5,7 @@ import { useState } from "react";
 import { setCookie } from "./useSetCookie";
 import { registerUser } from "../api/netflixApi";
 
-const useRegister = () => {
+export const useRegister = () => {
   const [registration, setRegistration] = useState(false);
   const { login } = useAuthContext();
 
@@ -42,8 +42,6 @@ const useRegister = () => {
 
   return { registration, register };
 };
-
-export { useRegister };
 
 function handleInputErrors({ email, password, confirmPassword, phoneNumber }) {
   const errorMessage =

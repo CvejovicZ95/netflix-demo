@@ -5,7 +5,7 @@ import { setCookie } from "./useSetCookie";
 import "react-toastify/dist/ReactToastify.css";
 import { homePageLogin } from "../api/netflixApi";
 
-const useHomePageLogin = () => {
+export const useHomePageLogin = () => {
   const { login } = useAuthContext();
   const [loginError, setLoginError] = useState(false);
 
@@ -25,8 +25,6 @@ const useHomePageLogin = () => {
   };
   return { loginHandler, loginError };
 };
-
-export { useHomePageLogin };
 
 function handleInputErrors({ email }) {
   return !email ? (toast.error("Please fill in field"), false) : true;

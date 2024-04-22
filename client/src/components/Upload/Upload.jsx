@@ -1,6 +1,6 @@
 import React from "react";
-import { Logo } from "../Logo/Logo";
-import { Logout } from "../LogoutButton/LogoutButton";
+import { Logo } from "../logo/Logo";
+import { Logout } from "../logoutButton/LogoutButton";
 import { useState } from "react";
 import { useUpload } from "../../hooks/useUpload";
 import { ToastContainer } from "react-toastify";
@@ -9,7 +9,7 @@ import { Navigate } from "react-router-dom";
 import { MdUpload } from "react-icons/md";
 import "./Upload.css";
 
-const Upload = () => {
+export const Upload = () => {
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
@@ -122,5 +122,3 @@ const Upload = () => {
     </div>
   );
 };
-
-export { Upload };

@@ -2,7 +2,7 @@ import React from "react";
 import { useLogout } from "../../hooks/useLogout";
 import "./LogoutButton.css";
 
-const Logout = () => {
+export const Logout = () => {
   const { logoutHandler } = useLogout();
   return (
     <div className="logout-div">
@@ -12,5 +12,3 @@ const Logout = () => {
     </div>
   );
 };
-
-export { Logout };

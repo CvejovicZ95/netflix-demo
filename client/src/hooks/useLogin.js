@@ -3,7 +3,7 @@ import { useAuthContext } from "../context/AuthContext";
 import { setCookie } from "./useSetCookie";
 import { loginUser } from "../api/netflixApi";
 
-const useLogin = () => {
+export const useLogin = () => {
   const { login } = useAuthContext();
 
   const loginHandler = async (email, password) => {
@@ -21,8 +21,6 @@ const useLogin = () => {
   };
   return { loginHandler };
 };
-
-export { useLogin };
 
 function handleInputErrors({ email, password }) {
   return !email || !password

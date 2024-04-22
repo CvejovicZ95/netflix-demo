@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Logo } from "../Logo/Logo";
+import { Logo } from "../logo/Logo";
 import { useState } from "react";
 import { useRegister } from "../../hooks/useRegister";
 import { ToastContainer } from "react-toastify";
@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { BiCameraMovie } from "react-icons/bi";
 import "./Register.css";
 
-const Register = () => {
+export const Register = () => {
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -92,5 +92,3 @@ const Register = () => {
     </div>
   );
 };
-
-export { Register };

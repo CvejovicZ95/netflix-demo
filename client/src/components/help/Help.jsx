@@ -1,8 +1,8 @@
 import React from "react";
-import { Logo } from "../Logo/Logo";
+import { Logo } from "../logo/Logo";
 import "./Help.css";
 
-const Help = () => {
+export const Help = () => {
   return (
     <>
       <Logo />
@@ -14,5 +14,3 @@ const Help = () => {
     </>
   );
 };
-
-export { Help };

@@ -1,9 +1,9 @@
 import React from "react";
-import { Header } from "./Header/Header";
-import { HomePage } from "./HomePage/HomePage";
+import { Header } from "./header/Header";
+import { HomePage } from "./homePage/HomePage";
 import { Outlet } from "react-router-dom";
 
-const Layout = () => {
+export const Layout = () => {
   return (
     <div className="App">
       <Header />
@@ -12,5 +12,3 @@ const Layout = () => {
     </div>
   );
 };
-
-export { Layout };
