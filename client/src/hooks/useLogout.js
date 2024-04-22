@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { logoutUser } from "../api/netflixApi";
 
-const useLogout = () => {
+export const useLogout = () => {
   const { logout } = useAuthContext();
 
   const logoutHandler = async () => {
@@ -16,5 +16,3 @@ const useLogout = () => {
   };
   return { logoutHandler };
 };
-
-export { useLogout };

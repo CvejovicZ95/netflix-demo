@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { BiCameraMovie } from "react-icons/bi";
 import "./Register.css";
 
-const Register = () => {
+export const Register = () => {
   const [inputs, setInputs] = useState({
     email: "",
     password: "",
@@ -92,5 +92,3 @@ const Register = () => {
     </div>
   );
 };
-
-export { Register };

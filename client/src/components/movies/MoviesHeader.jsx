@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import "./MoviesHeader.css";
 import PropTypes from "prop-types";
 
-const MoviesHeader = ({ setSearch }) => {
+export const MoviesHeader = ({ setSearch }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (e) => {
@@ -52,4 +52,3 @@ const MoviesHeader = ({ setSearch }) => {
 };
 
 MoviesHeader.propTypes = { setSearch: PropTypes.func };
-export { MoviesHeader };

@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Logo } from "../logo/Logo.jsx";
+import { Logo } from "../logo/Logo";
 import { useState } from "react";
-import { useLogin } from "../../hooks/useLogin.js";
+import { useLogin } from "../../hooks/useLogin";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Login.css";
 
-const Login = () => {
+export const Login = () => {
   const [check, setCheck] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -72,5 +72,3 @@ const Login = () => {
     </>
   );
 };
-
-export { Login };

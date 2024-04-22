@@ -3,7 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { uploadMovie } from "../api/netflixApi";
 
-const useUpload = () => {
+export const useUpload = () => {
   const [uploaded, setUploaded] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -48,8 +48,6 @@ const useUpload = () => {
 
   return { loading, uploaded, upload };
 };
-
-export { useUpload };
 
 function handleInputErrors({
   title,

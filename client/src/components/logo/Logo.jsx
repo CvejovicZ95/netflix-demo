@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 
-const Logo = () => {
+export const Logo = () => {
   const { authUser } = useAuthContext();
 
   return (
@@ -19,5 +19,3 @@ const Logo = () => {
     </div>
   );
 };
-
-export { Logo };

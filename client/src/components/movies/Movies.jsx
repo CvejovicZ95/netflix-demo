@@ -6,7 +6,7 @@ import { useStartStreaming } from "../../hooks/useStartStreaming";
 import videojs from "video.js";
 import "./Movies.css";
 
-const Movies = () => {
+export const Movies = () => {
   const { movies } = useGetMovies();
   const { stream } = useStartStreaming();
   const [search, setSearch] = useState("");
@@ -114,5 +114,3 @@ const Movies = () => {
     </>
   );
 };
-
-export { Movies };

@@ -9,7 +9,7 @@ import { Navigate } from "react-router-dom";
 import { MdUpload } from "react-icons/md";
 import "./Upload.css";
 
-const Upload = () => {
+export const Upload = () => {
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
@@ -122,5 +122,3 @@ const Upload = () => {
     </div>
   );
 };
-
-export { Upload };

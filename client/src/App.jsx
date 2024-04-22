@@ -8,7 +8,7 @@ import { Upload } from "./components/upload/Upload";
 import { Route, Routes, Navigate } from "react-router-dom";
 import { useAuthContext } from "./context/AuthContext";
 
-function App() {
+export function App() {
   const { authUser } = useAuthContext();
   return (
     <Routes>
@@ -35,5 +35,3 @@ function App() {
     </Routes>
   );
 }
-
-export { App };

@@ -23,7 +23,7 @@ const playVideo = (videoPath) => {
   videoPlayer.play();
 };
 
-const useStartStreaming = () => {
+export const useStartStreaming = () => {
   const stream = async (movieId) => {
     try {
       const movieData = await fetchMovieData(movieId);
@@ -38,8 +38,6 @@ const useStartStreaming = () => {
 
   return { stream };
 };
-
-export { useStartStreaming };
 
 const handleInputErrors = ({ movieId }) => {
   if (!movieId) {
