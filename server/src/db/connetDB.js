@@ -1,11 +1,12 @@
 import mongoose from 'mongoose'
+import { logger } from '../../logger.js'
 
 const connect = () => {
   mongoose
     .connect(`${process.env.DATABASE_URL}`)
-    .then(() => console.log('Connected to DB'))
+    .then(() => logger.info('Connected to DB'))
     .catch((error) => {
-      console.log('Smth went wrong', error)
+      logger.error('Smth went wrong', error)
     })
 }
 

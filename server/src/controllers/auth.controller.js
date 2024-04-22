@@ -1,6 +1,7 @@
 import User from '../models/usersSchema.js'
 import bcrypt from 'bcrypt'
 import { generateTokenAndSetCookie } from '../utils/generateToken.js'
+import { logger } from '../../logger.js'
 
 export const register = async (req, res) => {
   try {
@@ -41,7 +42,7 @@ export const register = async (req, res) => {
       res.status(400).json({ error: 'Invalid user data' })
     }
   } catch (error) {
-    console.log('Error in register controller', error.message)
+    logger.error('Error in register controller', error.message)
     res.status(500).json({ error: 'Internal server error' })
   }
 }
@@ -68,7 +69,7 @@ export const login = async (req, res) => {
       phoneNumber: user.phoneNumber
     })
   } catch (error) {
-    console.log('Error in login controller', error.message)
+    logger.error('Error in login controller', error.message)
     res.status(500).json({ error: 'Internal server error' })
   }
 }
@@ -91,7 +92,7 @@ export const homePageLogin = async (req, res) => {
       phoneNumber: user.phoneNumber
     })
   } catch (error) {
-    console.log('Error in login controller', error.message)
+    logger.error('Error in login controller', error.message)
     res.status(500).json({ error: 'Internal server error' })
   }
 }
@@ -101,7 +102,7 @@ export const logout = async (req, res) => {
     res.cookie('jwt', '', { maxAge: 0 })
     res.status(200).json({ message: 'Logged out successfully' })
   } catch (error) {
-    console.log('Error in logout controller', error.message)
+    logger.error('Error in logout controller', error.message)
     res.status(500).json({ error: 'Internal server error' })
   }
 }
