@@ -20,7 +20,7 @@ This project involves an app where registered users can both watch movies and up
 
 ## Technologies Used
 
-- React
+- React.js
 - JavaScript
 - Node.js
 - Express
