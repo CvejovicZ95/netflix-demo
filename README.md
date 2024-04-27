@@ -23,7 +23,7 @@ This project involves an app where registered users can both watch movies and up
 - React.js
 - JavaScript
 - Node.js
-- Express
+- Express.js
 - MongoDB
 - CSS3
 
