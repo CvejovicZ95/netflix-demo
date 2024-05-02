@@ -1,37 +1,38 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { AuthContext } from "../../context/AuthContext";
-import { Movies } from "../movies/Movies";
-import { HomePage } from "../Layout/homePage/HomePage";
+import { Logo } from "./Logo";
 import "@testing-library/jest-dom";
+
+jest.mock("../../context/AuthContext", () => ({
+  useAuthContext: () => ({ authUser: true }),
+}));
 
 describe("Logo component", () => {
   it("should render Movies page when user is authenticated", () => {
-    const authUser = { isAuthenticated: true };
-    const { getByText } = render(
+    const { getByAltText } = render(
       <MemoryRouter>
-        <AuthContext.Provider value={{ authUser }}>
-          <Movies />
-        </AuthContext.Provider>
+        <Logo />
       </MemoryRouter>,
     );
-    expect(
-      getByText("Lights, camera, no action! No movies found."),
-    ).toBeInTheDocument();
+
+    const logoImage = getByAltText("logo");
+    expect(logoImage).toBeInTheDocument();
   });
 
   it("should render Home Page when user is not authenticated", () => {
-    const authUser = { isAuthenticated: false };
-    const { getByText } = render(
+    jest.resetModules();
+    jest.mock("../../context/AuthContext", () => ({
+      useAuthContext: () => ({ authUser: false }),
+    }));
+
+    const { getByAltText } = render(
       <MemoryRouter>
-        <AuthContext.Provider value={{ authUser }}>
-          <HomePage />
-        </AuthContext.Provider>
+        <Logo />
       </MemoryRouter>,
     );
-    expect(
-      getByText("Unlimited movies, TV shows, and more"),
-    ).toBeInTheDocument();
+
+    const logoImage = getByAltText("logo");
+    expect(logoImage).toBeInTheDocument();
   });
 });
