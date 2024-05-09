@@ -14,7 +14,6 @@
     "web-vitals": "^3.5.2"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "webpack",
     "dev": "webpack serve",
     "test": "jest",
