@@ -1,4 +1,6 @@
 import { fetchMovies } from "./netflixApi";
+import config from "../../config.json"
+const {apiUrl} = config
 
 const mockFetch = jest.fn(() =>
   Promise.resolve({
@@ -35,7 +37,7 @@ describe("Netflix API", () => {
 
     expect(mockFetch).toHaveBeenCalledTimes(1);
     expect(mockFetch).toHaveBeenCalledWith(
-      `${process.env.REACT_APP_NETFLIX_API_URL}/api/movies`,
+      `${apiUrl}/api/movies`,
     );
 
     expect(movies).toBeTruthy();

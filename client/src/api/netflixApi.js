@@ -1,4 +1,6 @@
-const apiUrl = process.env.REACT_APP_NETFLIX_API_URL;
+import config from "../../config.json"
+
+const {apiUrl} = config
 
 export const fetchMovies = async () => {
   try {
