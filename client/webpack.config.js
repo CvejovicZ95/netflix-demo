@@ -1,9 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const webpack = require("webpack");
-
-require("dotenv").config({ path: "./.env" });
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   mode: "development",
@@ -63,10 +61,8 @@ module.exports = {
         },
       ],
     }),
-    new webpack.DefinePlugin({
-      "process.env.REACT_APP_NETFLIX_API_URL": JSON.stringify(
-        process.env.REACT_APP_NETFLIX_API_URL,
-      ),
+    new Dotenv({
+      path: "./.env",
     }),
   ],
 };
