@@ -1,6 +1,6 @@
-import config from "../../config.json"
+import config from "../../config.json";
 
-const {apiUrl} = config
+const { apiUrl } = config;
 
 export const fetchMovies = async () => {
   try {

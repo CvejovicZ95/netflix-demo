@@ -1,8 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
   mode: "development",
@@ -57,14 +55,10 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: "public/**/*.+(png|jpg|jpeg|gif|svg)",
+          from: "assets/**/*.+(png|jpg|jpeg|gif|svg)",
           to: "[name][ext]",
-          globOptions: {
-            ignore: ["**/index.html"],
-          },
         },
       ],
     }),
-    new BundleAnalyzerPlugin(),
   ],
 };
